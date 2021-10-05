@@ -4,14 +4,17 @@ const path = require('path');
 const cluster = require('cluster');
 const CPU_COUNT = require('os').cpus().length;
 const http = require('http');
-const stripeRoute = require('./routes/stripe');
 const app = require('./app');
 
 if (cluster.isMaster) {
-    console.log(`Primary process #${process.pid} started on ${new Date().toISOString().split('T')[0]} at ${Date.getTime()}`);
+    console.log(`Server primary process #${process.pid} started at ${Date().toLocaleLowerCase('en',{
+        timeStyle: 'short',
+        hour12: false,
+        timeZone: 'UTC'
+    })}`);
 
     for(let i = 0; i < CPU_COUNT; i++) {
-        console.log(`Starting worker #${i} with process id #${Worker.process.pid}`);
+        console.log(`Starting worker #${i}...`);
         cluster.fork();
     }
     cluster.fork();

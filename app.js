@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const stripeRoute = require('./routes/stripe');
 
 const app = express();
 
