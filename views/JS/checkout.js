@@ -3,7 +3,7 @@ var stripe = Stripe("Add your publishable key");
 var checkoutButton = document.getElementById("btn");
 
 checkoutButton.addEventListener("click", function () {
-  fetch("/payment", {
+  fetch("/stripe/payment", {
     headers: {
       'Content-Type': 'application/json',
       'accept': 'application/json'
