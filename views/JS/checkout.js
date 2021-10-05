@@ -1,5 +1,5 @@
 // Create an instance of the Stripe object with your publishable API key
-var stripe = Stripe("Add your publishable key");
+var stripe = Stripe('pk_test_51JhDcCBWZN8h9ujbEEH0mTkTgpbkkgfO4QU0hX6pTvfYnvCVWv6GlRSYj5s8LLMYnCAmGy5jHjbA5VZEBeHS1l3b00VnvOdq8E');
 var checkoutButton = document.getElementById("btn");
 
 checkoutButton.addEventListener("click", function () {
@@ -21,6 +21,7 @@ checkoutButton.addEventListener("click", function () {
       return response.json();
     })
     .then(function (session) {
+      // TODO: Checkout why this is not working through Stripe documentation
       return stripe.redirectToCheckout({ sessionId: session.id });
     })
     .then(function (result) {
