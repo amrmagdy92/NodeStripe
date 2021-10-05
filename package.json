@@ -1,0 +1,11 @@
+{
+  "name": "node-payment-integration",
+  "version": "1.0.0",
+  "description": "A simple payment integration API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amr Magdy",
+  "license": "ISC"
+}
