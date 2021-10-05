@@ -21,7 +21,7 @@ checkoutButton.addEventListener("click", function () {
       return response.json();
     })
     .then(function (session) {
-      // TODO: Checkout why this is not working through Stripe documentation
+      // FIXME: Checkout why this is not working through Stripe documentation
       return stripe.redirectToCheckout({ sessionId: session.id });
     })
     .then(function (result) {
