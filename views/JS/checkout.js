@@ -18,15 +18,12 @@ checkoutButton.addEventListener("click", function () {
         }})
   })
     .then(function (response) {
-      console.log('First then');
       return response.json();
     })
     .then(function (session) {
-      console.log('checkout then');
       return stripe.redirectToCheckout({ sessionId: session.id });
     })
     .then(function (result) {
-      console.log('redirect fails then');
       // If redirectToCheckout fails due to a browser or network
       // error, you should display the localized error message to your
       // customer using error.message.
